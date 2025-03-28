@@ -1,4 +1,3 @@
-import { Profiler } from "@oaklean/profiler";
 import { CanAccess, GitHubBanner, Refine } from "@refinedev/core";
 import {
   useNotificationProvider,
@@ -21,39 +20,27 @@ import { model, adapter } from "./accessControl";
 import { Header } from "./components/header";
 import { PostList, PostCreate, PostEdit, PostShow } from "./pages/posts";
 import { UserList, UserCreate, UserEdit, UserShow } from "./pages/users";
-import { useEffect } from "react";
 import {
   CategoryList,
   CategoryCreate,
   CategoryEdit,
   CategoryShow,
 } from "./pages/categories";
+// import { Profiler } from '@oaklean/profiler'
+// const profile = new Profiler('new profile')
+
+// async function main() {
+//   await profile.start("first report")
+//   // run the code to profile
+//   await profile.finish("first report")
+// }
+// main()
 
 const API_URL = "https://api.fake-rest.refine.dev";
 
-async function main() {
-  await Profiler.inject("first report") // IMPORTANT: need the await
-  // run the code to measure
-  //Example: 
-  let sum = 0;
-    for (let i = 0; i < 1000000; i++) {
-      sum += i;
-    }
-}
-main()
-
 const App: React.FC = () => {
   const role = localStorage.getItem("role") ?? "admin";
-  useEffect(() => {
-    // Start profiling when the app loads
-    const profile = Profiler.start("App Initialization");
 
-    return () => {
-        // Stop profiling when the component unmounts
-        const report = profile.stop();
-        console.log("App Energy Report:", report);
-    };
-}, []);
 
   return (
     <BrowserRouter>
@@ -174,4 +161,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

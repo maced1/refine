@@ -1,0 +1,28 @@
+{
+  "exportOptions": {
+    "outDir": "profiles/",
+    "outHistoryDir": "profiles_history/",
+    "rootDir": "./",
+    "exportV8Profile": false,
+    "exportReport": true,
+    "exportSensorInterfaceData": false
+  },
+  "projectOptions": {
+    "identifier": "383f7c5d-1cda-4088-8d02-3b9618ea6a9b"
+  },
+  "runtimeOptions": {
+    "seeds": {},
+    "v8": {
+      "cpu": {
+        "sampleInterval": 1
+      }
+    },
+    "sensorInterface": {
+      "type": "perf",
+      "options": {
+        "outputFilePath": "energy-measurements.txt",
+        "sampleInterval": 100
+      }
+    }
+  }
+}
